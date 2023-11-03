@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, ScrollView, Image, TouchableOpacity, Linking, StyleSheet, Text } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 import { Feather } from '@expo/vector-icons';
+import { responsiveWidth,responsiveHeight,responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -82,12 +83,16 @@ const Login = () => {
             />
           </TouchableOpacity>
         </View>
+
+        <View style={styles.LowerText}>
         <Text style={{ fontSize: 15, paddingLeft: 50, paddingTop: 60 }}>
           Don't have an account?
           <TouchableOpacity>
             <Text style={styles.RegisterText}> Register Now</Text>
           </TouchableOpacity>
         </Text>
+        </View>
+
       </ScrollView>
     </View>
   );
@@ -98,59 +103,59 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 200,
+    paddingTop: responsiveWidth(45),
   },
   headingText: {
     fontWeight: 'bold',
-    fontSize: 20,
-    margin: 40,
+    fontSize: responsiveFontSize(3),
+    margin: responsiveWidth(6),
     marginTop: 2,
   },
   subheading: {
-    fontSize: 16,
-    marginTop: 10,
-    marginBottom: 10,
+    fontSize: responsiveFontSize(1.75),
+    marginTop: responsiveWidth(3),
+    marginBottom: responsiveWidth(2),
   },
   card: {
-    padding: 6,
+    padding: responsiveWidth(5),
     width: '98%',
-    margin: 2,
-    padding: 8,
+    margin: responsiveWidth(1),
+    padding: responsiveWidth(2),
   },
   ForgotPass: {
     color: 'blue',
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: responsiveFontSize(1.75),
     textDecorationLine: 'underline',
-    paddingLeft: 200,
-    margin: 8,
+    paddingLeft: responsiveWidth(60),
+    margin: responsiveWidth(2),
   },
   Loginbutton: {
-    margin: 8,
-    padding: 5,
+    margin: responsiveWidth(4),
+    padding: responsiveWidth(1),
   },
   continue: {
-    paddingLeft: 100,
-    margin: 15,
-    marginTop: 35,
-    fontSize: 15,
+    paddingLeft: responsiveWidth(30),
+    margin: responsiveWidth(2),
+    marginTop: responsiveWidth(3),
+    fontSize: responsiveFontSize(1.75),
     fontWeight: 'bold',
   },
   ImageView: {
     flexDirection: 'row',
     alignItems: 'center', // Align images vertically in the center
-    paddingLeft: 100,
+    paddingLeft: responsiveWidth(30),
   },
   socialIcon: {
-    margin: 5,
-    width: 40,
-    height: 40,
+    margin: responsiveWidth(0.5),
+    width: responsiveWidth(10),
+    height: responsiveHeight(5),
   },
   RegisterText: {
     color: 'blue',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: responsiveFontSize(1.75),
   },
   passwordInputContainer: {
     flexDirection: 'row',
@@ -160,8 +165,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   eyeIcon: {
-    margin: 5,
+    margin: responsiveWidth(2),
   },
+  LowerText:{
+    paddingTop:responsiveWidth(10),
+    paddingLeft:responsiveWidth(7)
+  }
 });
 
 export default Login;
