@@ -65,7 +65,7 @@ const Login = () => {
         <View style={styles.ImageView}>
           <TouchableOpacity onPress={openFacebookLink}>
             <Image
-              source={require('../assets/Images/facebook_icon.jpg')}
+              source={require('../assets/Images/facebook_icon.png')}
               style={styles.socialIcon}
             />
           </TouchableOpacity>
