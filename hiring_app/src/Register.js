@@ -4,7 +4,7 @@ import { Card, Button } from 'react-native-paper';
 import { Feather } from '@expo/vector-icons';
 import { responsiveWidth,responsiveHeight,responsiveFontSize } from 'react-native-responsive-dimensions';
 
-const Register = () => {
+const Register = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -12,6 +12,10 @@ const Register = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisibility(!isPasswordVisible);
   };
+
+  const NavigateLogin=()=>{
+    navigation.navigate("Login")
+  }
 
   return (
     <View style={styles.container}>
@@ -65,7 +69,7 @@ const Register = () => {
         <View style={styles.LowerText}>
         <Text style={{ fontSize: 15,paddingLeft:30, paddingTop: 60 }}>
           Already have an account? 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={NavigateLogin}>
             <Text style={styles.LoginText}> Login Now</Text>
           </TouchableOpacity>
         </Text>
@@ -81,7 +85,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: responsiveWidth(25),
+    paddingTop: responsiveWidth(12),
   },
   subheading: {
     fontSize: responsiveFontSize(2),
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
   },
   LowerText:{
     paddingTop:responsiveWidth(18),
-    paddingLeft:responsiveWidth(10),
+    paddingLeft:responsiveWidth(2.5),
   }
 });
 

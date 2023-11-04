@@ -4,7 +4,7 @@ import { Button, Card } from 'react-native-paper';
 import { Feather } from '@expo/vector-icons';
 import { responsiveWidth,responsiveHeight,responsiveFontSize } from 'react-native-responsive-dimensions';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -24,6 +24,22 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisibility(!isPasswordVisible);
   };
+
+  // const NavigateLogin=()=>{
+  //   if(username=="Rehana" && password=="12345"){
+  //     navigation.navigate("Hiring_Page")
+  //   };
+    const NavigateRegister=()=>{
+      navigation.navigate("Register")
+    };
+
+    const NavigateHiring=()=>{
+      if(username=="Rehana" && password=="1234"){
+        navigation.navigate("Hiring")
+      }
+    };
+    
+  
 
   return (
     <View style={styles.container}>
@@ -58,7 +74,7 @@ const Login = () => {
           </View>
         </Card>
         <Text style={styles.ForgotPass}>Forgot Password?</Text>
-        <Button mode="contained" style={styles.Loginbutton}>
+        <Button mode="contained" style={styles.Loginbutton} onPress={NavigateHiring}>
           Login
         </Button>
         <Text style={styles.continue}>or continue with</Text>
@@ -87,7 +103,7 @@ const Login = () => {
         <View style={styles.LowerText}>
         <Text style={{ fontSize: 15, paddingLeft: 50, paddingTop: 60 }}>
           Don't have an account?
-          <TouchableOpacity>
+          <TouchableOpacity onPress={NavigateRegister}>
             <Text style={styles.RegisterText}> Register Now</Text>
           </TouchableOpacity>
         </Text>
@@ -96,6 +112,7 @@ const Login = () => {
       </ScrollView>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
@@ -103,7 +120,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: responsiveWidth(45),
+    paddingTop: responsiveWidth(30),
   },
   headingText: {
     fontWeight: 'bold',
@@ -169,7 +186,7 @@ const styles = StyleSheet.create({
   },
   LowerText:{
     paddingTop:responsiveWidth(10),
-    paddingLeft:responsiveWidth(7)
+    paddingLeft:responsiveWidth(1)
   }
 });
 
