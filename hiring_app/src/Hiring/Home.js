@@ -32,7 +32,7 @@ const Home = () => {
         </View>
       </Card>
       <Image
-        style={{ width: 350, height: 170 }}
+        style={{ width: 350, height: 170,marginLeft:10,marginRight:50 }}
         source={require('../../assets/Images/join_Image.jpg')}
       />
       <View style={styles.row}>
@@ -52,6 +52,9 @@ const Home = () => {
           <Text style={styles.text}>Karachi,Pakistan</Text>
           <Text style={styles.JDtext}>See Job description</Text>
         </View>
+        <View style={styles.saveIcon}>
+              <Icon name="bookmark" size={20} color="#1d6b43" />
+            </View>
       </View>
         </Card>
 
@@ -66,6 +69,9 @@ const Home = () => {
           <Text style={styles.text}>Karachi,Pakistan</Text>
           <Text style={styles.JDtext}>See Job description</Text>
         </View>
+        <View style={styles.saveIcon}>
+              <Icon name="bookmark" size={20} color="#1d6b43" />
+            </View>
       </View>
         </Card>
 
@@ -80,6 +86,9 @@ const Home = () => {
           <Text style={styles.text}>Karachi,Pakistan</Text>
           <Text style={styles.JDtext}>See Job description</Text>
         </View>
+        <View style={styles.saveIcon}>
+              <Icon name="bookmark" size={20} color="#1d6b43" />
+            </View>
       </View>
         </Card>
 
@@ -94,6 +103,9 @@ const Home = () => {
           <Text style={styles.text}>Karachi,Pakistan</Text>
           <Text style={styles.JDtext}>See Job description</Text>
         </View>
+        <View style={styles.saveIcon}>
+              <Icon name="bookmark" size={20} color="#1d6b43" />
+            </View>
       </View>
         </Card>
 
@@ -106,6 +118,7 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#dce0f7',
   },
   text: {
     fontSize: 16,
@@ -165,6 +178,11 @@ const styles = StyleSheet.create({
   JobCard:{
     padding: 6,
     margin: 10,
+  },
+  saveIcon: {
+    marginLeft: 'auto',
+    alignSelf: 'flex-end',
+    marginRight: 10,
   },
 });
 
