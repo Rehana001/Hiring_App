@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './Hiring/Home';
 import Saved from './Hiring/Saved';
@@ -7,12 +7,13 @@ import Messages from './Hiring/Messages';
 import Profile from './Hiring/Profile';
 import { Ionicons, MaterialCommunityIcons } from 'react-native-vector-icons';
 import { StyleSheet } from 'react-native';
+import Login from './Login';
+
 
 const Drawer = createDrawerNavigator();
 
-function Hiring_Screen() {
+function Hiring_Screen({ navigation }) {
   return (
-    
     <Drawer.Navigator>
       <Drawer.Screen
         name="Home"
@@ -50,17 +51,46 @@ function Hiring_Screen() {
           ),
         }}
       />
+      {/* Logout Item */}
+      <Drawer.Screen
+        name="Logout"
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="log-out" size={size} color={color} />
+          ),
+          drawerLabel: 'Logout',
+        }}
+      >
+        {() => (
+          <TouchableOpacity
+            style={styles.logoutButton}
+            onPress={() => {
+              // Add your logout logic here
+              navigation.navigate('Login'); // Replace 'Login' with your login screen name
+            }}>
+            <Text style={styles.logoutText}>Logout</Text>
+          </TouchableOpacity>
+        )}
+      </Drawer.Screen>
     </Drawer.Navigator>
-   
   );
 }
 
-export default Hiring_Screen;
-
 const styles = StyleSheet.create({
-        container: {
-            flexGrow: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }
-})
+  container: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoutButton: {
+    padding: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  logoutText: {
+    fontSize: 16,
+    marginLeft: 10,
+  },
+});
+
+export default Hiring_Screen;

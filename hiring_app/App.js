@@ -10,6 +10,7 @@ import Providing_Screen from './src/Providing_Screen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './src/Hiring/Home';
 import Saved from './src/Hiring/Saved';
+import CustomDrawer from './src/CustomDrawer';
 
 const Stack= createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -41,6 +42,7 @@ function HiringScreens() {
       <Stack.Screen name="Hiring" component={Hiring_Page} />
       <Stack.Screen name="Hiring_Screen" component={Hiring_Screen} options={{ headerShown: false }}/>
       <Stack.Screen name="Providing_Screen" component={Providing_Screen} />
+      <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
     </Stack.Navigator>
   )
   };
