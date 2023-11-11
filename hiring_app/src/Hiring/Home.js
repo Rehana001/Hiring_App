@@ -1,10 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TextInput } from 'react-native-gesture-handler';
+import Job_description from './Job_description';
 
-const Home = () => {
+const Home = ({navigation}) => {
+
+  const NavigateJobDescription=()=>{
+    navigation.navigate("Job_description")
+};
+
   return (
     <View style={styles.container}>
       <View style={styles.ViewInfo}>
@@ -50,7 +56,9 @@ const Home = () => {
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>Mathematics Teacher</Text>
           <Text style={styles.text}>Karachi,Pakistan</Text>
+          <TouchableOpacity onPress={NavigateJobDescription}>
           <Text style={styles.JDtext}>See Job description</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.saveIcon}>
               <Icon name="bookmark" size={20} color="#1d6b43" />
@@ -67,7 +75,9 @@ const Home = () => {
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>English Teacher</Text>
           <Text style={styles.text}>Karachi,Pakistan</Text>
+          <TouchableOpacity onPress={NavigateJobDescription}>
           <Text style={styles.JDtext}>See Job description</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.saveIcon}>
               <Icon name="bookmark" size={20} color="#1d6b43" />
@@ -84,7 +94,9 @@ const Home = () => {
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>Geography Teacher</Text>
           <Text style={styles.text}>Karachi,Pakistan</Text>
+          <TouchableOpacity onPress={NavigateJobDescription}>
           <Text style={styles.JDtext}>See Job description</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.saveIcon}>
               <Icon name="bookmark" size={20} color="#1d6b43" />
@@ -101,7 +113,9 @@ const Home = () => {
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>Computer Science Teacher</Text>
           <Text style={styles.text}>Karachi,Pakistan</Text>
+          <TouchableOpacity onPress={NavigateJobDescription}>
           <Text style={styles.JDtext}>See Job description</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.saveIcon}>
               <Icon name="bookmark" size={20} color="#1d6b43" />
