@@ -11,6 +11,7 @@ const Home = ({navigation}) => {
     navigation.navigate("Job_description")
 };
 
+
   return (
     <View style={styles.container}>
       <View style={styles.ViewInfo}>

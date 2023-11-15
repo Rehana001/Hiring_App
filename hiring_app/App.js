@@ -13,6 +13,7 @@ import Saved from './src/Hiring/Saved';
 import CustomDrawer from './src/CustomDrawer';
 import Job_description from './src/Hiring/Job_description';
 import ApplyNow from './src/Hiring/ApplyNow';
+import SuccessfulScreen from './src/Hiring/SuccessfulScreen';
 
 const Stack= createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -47,6 +48,7 @@ function HiringScreens() {
       <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
       <Stack.Screen name="Job_description" component={Job_description} options={{ headerShown: false }}/>
       <Stack.Screen name="ApplyNow" component={ApplyNow}/>
+      <Stack.Screen name="SuccessfulScreen" component={SuccessfulScreen}/>
     </Stack.Navigator>
   )
   };
