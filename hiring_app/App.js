@@ -14,6 +14,8 @@ import CustomDrawer from './src/CustomDrawer';
 import Job_description from './src/Hiring/Job_description';
 import ApplyNow from './src/Hiring/ApplyNow';
 import SuccessfulScreen from './src/Hiring/SuccessfulScreen';
+import AppliedJobLists from './src/Hiring/AppliedJobLists';
+import DiscoverMoreJobs from './src/Hiring/DiscoverMoreJobs';
 
 const Stack= createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +41,7 @@ function DrawerNavigator() {
 
 function HiringScreens() {
   return (
+   
     <Stack.Navigator>
       <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="Register" component={Register}/>
@@ -49,6 +52,8 @@ function HiringScreens() {
       <Stack.Screen name="Job_description" component={Job_description} options={{ headerShown: false }}/>
       <Stack.Screen name="ApplyNow" component={ApplyNow}/>
       <Stack.Screen name="SuccessfulScreen" component={SuccessfulScreen}/>
+      <Stack.Screen name="AppliedJobLists" component={AppliedJobLists}/>
+      <Stack.Screen name="DiscoverMoreJobs" component={DiscoverMoreJobs}/>
     </Stack.Navigator>
   )
   };
