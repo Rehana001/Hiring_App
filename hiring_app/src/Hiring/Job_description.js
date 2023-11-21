@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, Modal, ScrollView } from 'react-native';
 import { Card } from 'react-native-paper';
 import ApplyNow from './ApplyNow';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Directions } from 'react-native-gesture-handler';
 
 const Job_description = ({ navigation }) => {
   const [modal, setModal] = useState(false);
@@ -14,8 +16,18 @@ const Job_description = ({ navigation }) => {
     setModal(false);
   };
 
+  const handleLogout = () => {
+    // Perform logout actions here
+    // For example, navigate to the login screen
+    navigation.navigate('Login'); // Replace 'Login' with the actual name of your login screen
+  };
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+        <Text style={styles.logoutText}> Logout</Text>
+          <Icon name="sign-out" size={20} color="blue" />
+        </TouchableOpacity>
       <Text style={styles.header}>Job details</Text>
       <Card style={styles.cardContent}>
         <View style={styles.contentContainer}>
@@ -183,6 +195,16 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
+  logoutButton:{
+    paddingLeft:280,
+    flexDirection:'row',
+  },
+  logoutText:{
+    backgroundColor:'purple',
+    color:"white",
+    borderRadius:5,
+    margin:2,
+  }
 });
 
 export default Job_description;

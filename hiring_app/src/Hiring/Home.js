@@ -10,23 +10,31 @@ const Home = ({navigation}) => {
   const NavigateJobDescription=()=>{
     navigation.navigate("Job_description")
 };
+const handleLogout = () => {
+  // Perform logout actions here
+  // For example, navigate to the login screen
+  navigation.navigate('Login'); // Replace 'Login' with the actual name of your login screen
+};
 
 
   return (
     <View style={styles.container}>
-      <View style={styles.ViewInfo}>
+       <View style={styles.ViewInfo}>
         <Image
           style={{ width: 60, height: 60, borderRadius: 30 }}
           source={require('../../assets/Images/person.jpeg')}
         />
-        
         <View style={{ marginLeft: 10 }}>
           <Text style={styles.text}>Hello, Rehana</Text>
           <Text style={styles.text}>Good Morning</Text>
           <View style={{marginLeft:230,}}>
-          <Icon name="bell" size={20} color="tomato" />
+            <Icon name="bell" size={20} color="tomato" />
           </View>
         </View>
+        <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+          <Icon name="sign-out" size={20} color="blue" />
+          <Text style={styles.logoutText}> Logout</Text>
+        </TouchableOpacity>
       </View>
       <Card style={styles.SearchCard}>
         <View style={styles.SearchContent}>
@@ -198,6 +206,15 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     alignSelf: 'flex-end',
     marginRight: 10,
+  },
+  logoutButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  logoutText: {
+    fontSize: 16,
+    marginLeft: 5,
+    color: 'blue',
   },
 });
 

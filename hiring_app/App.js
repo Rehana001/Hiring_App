@@ -17,6 +17,8 @@ import SuccessfulScreen from './src/Hiring/SuccessfulScreen';
 import AppliedJobLists from './src/Hiring/AppliedJobLists';
 import DiscoverMoreJobs from './src/Hiring/DiscoverMoreJobs';
 
+
+
 const Stack= createStackNavigator();
 const Drawer = createDrawerNavigator();
 
